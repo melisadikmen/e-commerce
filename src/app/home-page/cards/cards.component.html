@@ -1,0 +1,23 @@
+<div class="container-cards">
+    @for (product of productsList | search:searchText; track $index) {
+    <div class="card-part">
+        <mat-card class="example-card" appearance="outlined">
+            <mat-card-header>
+                <button mat-button (click)="addToFav(product)" renklendir="red">
+                    <mat-icon>favorite</mat-icon>
+                </button>
+                <mat-card-title>{{product?.name}}</mat-card-title>
+                <mat-card-subtitle>{{product?.category}}</mat-card-subtitle>
+            </mat-card-header>
+            <img class="products-img" [src]="product?.image" alt="">
+            <mat-card-content> {{product?.description}} </mat-card-content>
+            <mat-card-actions>
+                <div class="alt">
+                    <p>{{product?.price | currency}}</p>
+                    <button class="glow-on-hover" (click)="addToBasket(product)" type="button">Sepete Ekle</button>
+                </div>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+    }
+</div>

@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="navbar">
+        <div class="input-area">
+            <mat-form-field class="example-form-field">
+                <input matInput type="text" [(ngModel)]="searchText" placeholder="Search something..."></mat-form-field>
+        </div>
+    </div>
+    <div class="go-basket">
+        <div class="icon">
+            <mat-icon (click)="goToFav()" style="margin-right:1rem;" [matBadge]="favItemList.length"
+                matBadgeColor="warn">favorite</mat-icon>
+            <mat-icon aria-hidden="false" [matBadge]="productsList.length" matBadgeColor="warn"
+                (click)="goToBasket()">shopping_cart</mat-icon>
+        </div>
+    </div>
+    <app-cards [productsList]="products" [searchText]="searchText" (addProduct)="addToBasket($event)"
+        (addFav)="addToFav($event)"></app-cards>
+    <app-scroll-to-top></app-scroll-to-top>
+</div>

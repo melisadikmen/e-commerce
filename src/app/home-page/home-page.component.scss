@@ -1,0 +1,29 @@
+.container {
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+
+    .navbar {
+        background: rgb(0, 0, 0);
+        background: linear-gradient(75deg, rgba(0, 0, 0, 0.7194600252210259) 0%, rgba(129, 129, 129, 0.865118288526348) 50%, rgba(207, 207, 207, 1) 100%);
+
+        .input-area {
+            display: flex;
+            justify-content: center;
+
+            .example-form-field {
+                width: 40%;
+            }
+        }
+    }
+
+    .go-basket {
+        display: flex;
+        justify-content: flex-end;
+        margin: 1.2rem;
+
+        .icon {
+            padding-inline: 1rem;
+        }
+    }
+}

@@ -1,0 +1,27 @@
+<nav class="navbar">
+    <div class="home">
+        <button class="home-button" (click)="goToHomePage()" mat-icon-button color="primary"
+            aria-label="Example icon button with a home icon">
+            <mat-icon>home</mat-icon>
+        </button>
+    </div>
+</nav>
+<div class="basket-container-cards">
+    @for (product of itemList; track $index) {
+    <div class="basket-card-part">
+        <mat-card class="example-card" appearance="outlined">
+            <mat-card-header>
+                <mat-card-title>{{product?.name}}</mat-card-title>
+                <mat-card-subtitle>{{product?.category}}</mat-card-subtitle>
+            </mat-card-header>
+            <img class="products-img" [src]="product?.image" alt="">
+            <mat-card-content> {{product?.description}} </mat-card-content>
+            <mat-card-actions>
+                <p>{{product?.price | currency}}</p>
+                <p> {{product?.quantity}} adet </p>
+            </mat-card-actions>
+            <button mat-button class="btn btn-white btn-animate" (click)="removeFromCart(product)">Remove</button>
+        </mat-card>
+    </div>
+    }
+</div>
